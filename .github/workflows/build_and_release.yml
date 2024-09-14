@@ -1,0 +1,26 @@
+name: Presentation
+on: 
+  push:
+    tags:
+      - pdf_**
+  pull_request:
+    tags:
+      - pdf_**
+jobs:
+  presentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run LaTeX
+        uses: xu-cheng/texlive-action@v2
+        with:
+          scheme: full
+          run: |
+            make -C tex pf2024.pdf
+            mv tex/pf2024.pdf .
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Presentation
+          files: pf2024.pdf
