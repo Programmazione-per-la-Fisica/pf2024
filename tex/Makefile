@@ -21,7 +21,7 @@ pf2024.pdf: $(TEXFILES)
 	# echo '\input{memory_management.tex}' >> contents.tex
 	# echo '\input{polymorphism.tex}' >> contents.tex
 	# echo '\input{epilog.tex}' >> contents.tex
-	# $(LATEX) -jobname=pf2024 pf
+	$(LATEX) -jobname=pf2024 pf
 	$(LATEX) -jobname=pf2024 pf
 	rm contents.tex
 
