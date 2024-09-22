@@ -8,8 +8,8 @@ TRANS = "\PassOptionsToClass{trans}{beamer}\input{pf}"
 pf2024.pdf: $(TEXFILES)
 	rm -f contents.tex
 	echo '\input{introduzione.tex}' > contents.tex
-	# echo '\input{architecture.tex}' >> contents.tex
-	# echo '\input{basics.tex}' >> contents.tex
+	echo '\input{architecture.tex}' >> contents.tex
+	echo '\input{basics.tex}' >> contents.tex
 	# echo '\input{flowcontrol.tex}' >> contents.tex
 	# echo '\input{functions.tex}' >> contents.tex
 	# echo '\input{reference.tex}' >> contents.tex
@@ -28,8 +28,8 @@ pf2024.pdf: $(TEXFILES)
 pf2024p.pdf: $(TEXFILES)
 	rm -f contents.tex
 	echo '\input{introduzione.tex}' > contents.tex
-	# echo '\input{architecture.tex}' >> contents.tex
-	# echo '\input{basics.tex}' >> contents.tex
+	echo '\input{architecture.tex}' >> contents.tex
+	echo '\input{basics.tex}' >> contents.tex
 	# echo '\input{flowcontrol.tex}' >> contents.tex
 	# echo '\input{functions.tex}' >> contents.tex
 	# echo '\input{reference.tex}' >> contents.tex
@@ -51,17 +51,17 @@ introduzione.pdf: pf.tex frontmatter.tex introduzione.tex
 	$(LATEX) -jobname=introduzione $(TRANS)
 	rm contents.tex
 
-# architecture.pdf: pf.tex frontmatter.tex architecture.tex
-# 	echo '\input{architecture.tex}' > contents.tex
-# 	$(LATEX) -jobname=architecture $(TRANS)
-# 	$(LATEX) -jobname=architecture $(TRANS)
-# 	rm contents.tex
+architecture.pdf: pf.tex frontmatter.tex architecture.tex
+	echo '\input{architecture.tex}' > contents.tex
+	$(LATEX) -jobname=architecture $(TRANS)
+	$(LATEX) -jobname=architecture $(TRANS)
+	rm contents.tex
 
-# basics.pdf: pf.tex frontmatter.tex basics.tex
-# 	echo '\input{basics.tex}' > contents.tex
-# 	$(LATEX) -jobname=basics $(TRANS)
-# 	$(LATEX) -jobname=basics $(TRANS)
-# 	rm contents.tex
+basics.pdf: pf.tex frontmatter.tex basics.tex
+	echo '\input{basics.tex}' > contents.tex
+	$(LATEX) -jobname=basics $(TRANS)
+	$(LATEX) -jobname=basics $(TRANS)
+	rm contents.tex
 
 # flowcontrol.pdf: pf.tex frontmatter.tex flowcontrol.tex
 # 	echo '\input{flowcontrol.tex}' > contents.tex
