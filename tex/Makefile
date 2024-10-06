@@ -10,7 +10,7 @@ pf2024.pdf: $(TEXFILES)
 	echo '\input{introduzione.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
 	echo '\input{basics.tex}' >> contents.tex
-	# echo '\input{flowcontrol.tex}' >> contents.tex
+	echo '\input{flowcontrol.tex}' >> contents.tex
 	# echo '\input{functions.tex}' >> contents.tex
 	# echo '\input{reference.tex}' >> contents.tex
 	# echo '\input{class.tex}' >> contents.tex
@@ -30,7 +30,7 @@ pf2024p.pdf: $(TEXFILES)
 	echo '\input{introduzione.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
 	echo '\input{basics.tex}' >> contents.tex
-	# echo '\input{flowcontrol.tex}' >> contents.tex
+	echo '\input{flowcontrol.tex}' >> contents.tex
 	# echo '\input{functions.tex}' >> contents.tex
 	# echo '\input{reference.tex}' >> contents.tex
 	# echo '\input{class.tex}' >> contents.tex
@@ -63,11 +63,11 @@ basics.pdf: pf.tex frontmatter.tex basics.tex
 	$(LATEX) -jobname=basics $(TRANS)
 	rm contents.tex
 
-# flowcontrol.pdf: pf.tex frontmatter.tex flowcontrol.tex
-# 	echo '\input{flowcontrol.tex}' > contents.tex
-# 	$(LATEX) -jobname=flowcontrol $(TRANS)
-# 	$(LATEX) -jobname=flowcontrol $(TRANS)
-# 	rm contents.tex
+flowcontrol.pdf: pf.tex frontmatter.tex flowcontrol.tex
+	echo '\input{flowcontrol.tex}' > contents.tex
+	$(LATEX) -jobname=flowcontrol $(TRANS)
+	$(LATEX) -jobname=flowcontrol $(TRANS)
+	rm contents.tex
 
 # functions.pdf: pf.tex frontmatter.tex functions.tex
 # 	echo '\input{functions.tex}' > contents.tex
