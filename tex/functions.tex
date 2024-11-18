@@ -905,6 +905,9 @@ float f3\{9\textquotesingle{}999\textquotesingle{}999\};  // ok, no information 
 float f4\{99\textquotesingle{}999\textquotesingle{}999\}; // error
 int i\{1.\};            // error
 int g\{d\};             // error\end{codeblock}
+
+  \item To force narrowing, use \code{static_cast} or initialize with \code{=} or
+    \code{()}
   \end{itemize}
 \end{frame}
 
