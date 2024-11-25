@@ -13,7 +13,7 @@ pf2024.pdf: $(TEXFILES)
 	echo '\input{flowcontrol.tex}' >> contents.tex
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
-	# echo '\input{class.tex}' >> contents.tex
+	echo '\input{class.tex}' >> contents.tex
 	# echo '\input{templates.tex}' >> contents.tex
 	# echo '\input{stl.tex}' >> contents.tex
 	# echo '\input{compilation.tex}' >> contents.tex
@@ -33,7 +33,7 @@ pf2024p.pdf: $(TEXFILES)
 	echo '\input{flowcontrol.tex}' >> contents.tex
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
-	# echo '\input{class.tex}' >> contents.tex
+	echo '\input{class.tex}' >> contents.tex
 	# echo '\input{templates.tex}' >> contents.tex
 	# echo '\input{stl.tex}' >> contents.tex
 	# echo '\input{compilation.tex}' >> contents.tex
@@ -81,11 +81,11 @@ reference.pdf: pf.tex frontmatter.tex reference.tex
 	$(LATEX) -jobname=reference $(TRANS)
 	rm contents.tex
 
-# class.pdf: pf.tex frontmatter.tex class.tex
-# 	echo '\input{class.tex}' > contents.tex
-# 	$(LATEX) -jobname=class $(TRANS)
-# 	$(LATEX) -jobname=class $(TRANS)
-# 	rm contents.tex
+class.pdf: pf.tex frontmatter.tex class.tex
+	echo '\input{class.tex}' > contents.tex
+	$(LATEX) -jobname=class $(TRANS)
+	$(LATEX) -jobname=class $(TRANS)
+	rm contents.tex
 
 # templates.pdf: pf.tex frontmatter.tex templates.tex
 # 	echo '\input{templates.tex}' > contents.tex
