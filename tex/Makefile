@@ -14,7 +14,7 @@ pf2024.pdf: $(TEXFILES)
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
 	echo '\input{class.tex}' >> contents.tex
-	# echo '\input{templates.tex}' >> contents.tex
+	echo '\input{templates.tex}' >> contents.tex
 	# echo '\input{stl.tex}' >> contents.tex
 	# echo '\input{compilation.tex}' >> contents.tex
 	# echo '\input{static.tex}' >> contents.tex
@@ -34,7 +34,7 @@ pf2024p.pdf: $(TEXFILES)
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
 	echo '\input{class.tex}' >> contents.tex
-	# echo '\input{templates.tex}' >> contents.tex
+	echo '\input{templates.tex}' >> contents.tex
 	# echo '\input{stl.tex}' >> contents.tex
 	# echo '\input{compilation.tex}' >> contents.tex
 	# echo '\input{static.tex}' >> contents.tex
@@ -87,11 +87,11 @@ class.pdf: pf.tex frontmatter.tex class.tex
 	$(LATEX) -jobname=class $(TRANS)
 	rm contents.tex
 
-# templates.pdf: pf.tex frontmatter.tex templates.tex
-# 	echo '\input{templates.tex}' > contents.tex
-# 	$(LATEX) -jobname=templates $(TRANS)
-# 	$(LATEX) -jobname=templates $(TRANS)
-# 	rm contents.tex
+templates.pdf: pf.tex frontmatter.tex templates.tex
+	echo '\input{templates.tex}' > contents.tex
+	$(LATEX) -jobname=templates $(TRANS)
+	$(LATEX) -jobname=templates $(TRANS)
+	rm contents.tex
 
 # stl.pdf: pf.tex frontmatter.tex stl.tex
 # 	echo '\input{stl.tex}' > contents.tex
