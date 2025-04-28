@@ -20,7 +20,7 @@ pf2024.pdf: $(TEXFILES)
 	echo '\input{static.tex}' >> contents.tex
 	echo '\input{memory_management.tex}' >> contents.tex
 	echo '\input{polymorphism.tex}' >> contents.tex
-	# echo '\input{epilog.tex}' >> contents.tex
+	echo '\input{epilog.tex}' >> contents.tex
 	$(LATEX) -jobname=pf2024 pf
 	$(LATEX) -jobname=pf2024 pf
 	rm contents.tex
@@ -40,7 +40,7 @@ pf2024p.pdf: $(TEXFILES)
 	echo '\input{static.tex}' >> contents.tex
 	echo '\input{memory_management.tex}' >> contents.tex
 	echo '\input{polymorphism.tex}' >> contents.tex
-	# echo '\input{epilog.tex}' >> contents.tex
+	echo '\input{epilog.tex}' >> contents.tex
 	$(LATEX) -jobname=pf2024p $(TRANS)
 	$(LATEX) -jobname=pf2024p $(TRANS)
 	rm contents.tex
@@ -123,11 +123,11 @@ polymorphism.pdf: pf.tex frontmatter.tex polymorphism.tex
 	$(LATEX) -jobname=polymorphism $(TRANS)
 	rm contents.tex
 
-# epilog.pdf: pf.tex frontmatter.tex epilog.tex
-# 	echo '\input{epilog.tex}' > contents.tex
-# 	$(LATEX) -jobname=epilog $(TRANS)
-# 	$(LATEX) -jobname=epilog $(TRANS)
-# 	rm contents.tex
+epilog.pdf: pf.tex frontmatter.tex epilog.tex
+	echo '\input{epilog.tex}' > contents.tex
+	$(LATEX) -jobname=epilog $(TRANS)
+	$(LATEX) -jobname=epilog $(TRANS)
+	rm contents.tex
 
 clean:
 	rm -f *.out *.aux *.nav *.toc *.vrb *.log *.snm contents.tex
